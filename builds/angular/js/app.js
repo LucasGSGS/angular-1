@@ -9,9 +9,8 @@ myApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: 'js/partials/search.html',
       controller: 'SearchController'
     })
-    .when('/details', {
+    .when('/details/:itemId', {
       templateUrl: 'js/partials/details.html',
       controller: 'DetailsController'
     });
 }]);
-

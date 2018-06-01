@@ -1,6 +1,6 @@
 var myControllers = angular.module('myControllers', []);
 
-myControllers.controller('SearchController', 
+myControllers.controller('SearchController',
   function MyController($scope, $http) {
     $http.get('js/data.json').then(function(response) {
       $scope.artists = response.data;
@@ -8,10 +8,13 @@ myControllers.controller('SearchController',
   });
 });
 
-myControllers.controller('DetailsController', 
-function MyController($scope, $http) {
+myControllers.controller('DetailsController',
+function MyController($scope, $http, $routeParams) {
   $http.get('js/data.json').then(function(response) {
     $scope.artists = response.data;
-    $scope.whichItem = 0;
+    $scope.whichItem = $routeParams.itemId;
 });
+
+
+
 });
